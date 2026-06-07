@@ -120,8 +120,6 @@ if(!isset($config_loja)){
     $banner_3      = $config_loja['banner_3']       ?? '';
 }
 ?>
-<link rel="stylesheet" href="<?= HOME ?>/sheep_temas/site/assets/css/style.css?v=1.2">
-
 <style>
   :root {
     --cor-primaria: <?= htmlspecialchars($cor_primaria) ?>;

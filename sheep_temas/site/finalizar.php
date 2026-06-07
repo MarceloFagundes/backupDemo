@@ -425,6 +425,187 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($checkoutErros)) {
 require_once('header.php');
 ?>
 
+<style>
+.finalizar-pagina {
+    padding: 2rem 9%;
+}
+
+.checkout-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.checkout-alert {
+    background: #fff3f3;
+    border: 1px solid #ffc9c9;
+    color: #9f1d1d;
+    border-radius: .6rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.checkout-alert strong {
+    display: block;
+    margin-bottom: .6rem;
+}
+
+.checkout-alert p {
+    margin: .2rem 0;
+    color: inherit;
+}
+
+.checkout-form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.checkout-form .flex .inputBox {
+    flex: 1 1 45rem;
+}
+
+.checkout-form .flex .inputBox span {
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+
+.checkout-form .flex .inputBox input,
+.checkout-form .flex .inputBox select,
+.checkout-form .flex .inputBox textarea {
+    width: 100%;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    margin-top: .5rem;
+    border: none;
+}
+
+.resumo-pedido {
+    margin-top: 2rem;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-top: 2rem;
+}
+
+.resumo-pedido h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.resumo-pedido p {
+    font-size: 1.6rem;
+    color: var(--light-color);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.total-final {
+    font-size: 2.2rem;
+    color: var(--red);
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.checkout-form .btn {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.criar-conta-checkout {
+    background: linear-gradient(135deg, #0f3460, #16213e);
+    border-radius: 1.2rem;
+    padding: 2rem 2.5rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 25px rgba(15, 52, 96, 0.25);
+    animation: fadeIn 0.4s ease;
+}
+
+.toggle-criar-conta {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+}
+
+.toggle-criar-conta input[type="checkbox"] {
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    accent-color: #ea1d2c;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.toggle-icon {
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.toggle-texto {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.toggle-criar-conta.ativa .toggle-texto {
+    color: #f1c40f;
+}
+
+.criar-conta-desc {
+    font-size: 1.4rem;
+    color: #a0b8d8;
+    line-height: 1.6;
+    margin: 0 0 0.5rem 0;
+    display: block !important;
+}
+
+.criar-conta-desc strong {
+    color: #f1c40f;
+}
+
+#campo-senha-nova .inputBox span {
+    color: #c8d8ea;
+    font-size: 1.5rem;
+}
+
+#campo-senha-nova .inputBox input {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: .8rem;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.5rem;
+    margin-top: 0.6rem;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+#campo-senha-nova .inputBox input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+#campo-senha-nova .inputBox input:focus {
+    outline: none;
+    border-color: #ea1d2c;
+    background: rgba(255,255,255,0.15);
+}
+</style>
+
 <div class="topo-pagina">
 	<h1>Finalizar Pedido</h1>
 	<p><a href="<?= HOME ?>" title="">Inicio >> </a>Finalizar</p>
@@ -866,186 +1047,3 @@ require_once('header.php');
 <?php
 require_once('footer.php');
 ?>
-
-<style>
-.finalizar-pagina {
-    padding: 2rem 9%;
-}
-
-.checkout-form {
-    background: #fff;
-    padding: 2rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-}
-
-.checkout-alert {
-    background: #fff3f3;
-    border: 1px solid #ffc9c9;
-    color: #9f1d1d;
-    border-radius: .6rem;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.4rem;
-}
-
-.checkout-alert strong {
-    display: block;
-    margin-bottom: .6rem;
-}
-
-.checkout-alert p {
-    margin: .2rem 0;
-    color: inherit;
-}
-
-.checkout-form .flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.checkout-form .flex .inputBox {
-    flex: 1 1 45rem;
-}
-
-.checkout-form .flex .inputBox span {
-    font-size: 1.7rem;
-    color: var(--light-color);
-}
-
-.checkout-form .flex .inputBox input,
-.checkout-form .flex .inputBox select,
-.checkout-form .flex .inputBox textarea {
-    width: 100%;
-    background: #eee;
-    border-radius: .5rem;
-    padding: 1.2rem 1.4rem;
-    font-size: 1.6rem;
-    color: var(--black);
-    text-transform: none;
-    margin-top: .5rem;
-    border: none;
-}
-
-.resumo-pedido {
-    margin-top: 2rem;
-    border-top: .1rem solid rgba(0,0,0,.1);
-    padding-top: 2rem;
-}
-
-.resumo-pedido h3 {
-    font-size: 2.2rem;
-    color: var(--black);
-    margin-bottom: 1.5rem;
-}
-
-.resumo-pedido p {
-    font-size: 1.6rem;
-    color: var(--light-color);
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.total-final {
-    font-size: 2.2rem;
-    color: var(--red);
-    text-align: right;
-    margin-top: 1rem;
-}
-
-.checkout-form .btn {
-    width: 100%;
-    margin-top: 2rem;
-}
-
-/* TRANSICAO SUAVE */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== BLOCO CRIAR CONTA NO CHECKOUT ===== */
-.criar-conta-checkout {
-    background: linear-gradient(135deg, #0f3460, #16213e);
-    border-radius: 1.2rem;
-    padding: 2rem 2.5rem;
-    margin: 2rem 0;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 8px 25px rgba(15, 52, 96, 0.25);
-    animation: fadeIn 0.4s ease;
-}
-
-.toggle-criar-conta {
-    display: flex;
-    align-items: center;
-    gap: 1.4rem;
-    cursor: pointer;
-    padding: 0.5rem 0;
-}
-
-.toggle-criar-conta input[type="checkbox"] {
-    width: 2.2rem;
-    height: 2.2rem;
-    cursor: pointer;
-    accent-color: #ea1d2c;
-    flex-shrink: 0;
-    margin: 0;
-}
-
-.toggle-icon {
-    font-size: 2.2rem;
-    line-height: 1;
-}
-
-.toggle-texto {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.3;
-}
-
-.toggle-criar-conta.ativa .toggle-texto {
-    color: #f1c40f;
-}
-
-.criar-conta-desc {
-    font-size: 1.4rem;
-    color: #a0b8d8;
-    line-height: 1.6;
-    margin: 0 0 0.5rem 0;
-    display: block !important;
-}
-
-.criar-conta-desc strong {
-    color: #f1c40f;
-}
-
-#campo-senha-nova .inputBox span {
-    color: #c8d8ea;
-    font-size: 1.5rem;
-}
-
-#campo-senha-nova .inputBox input {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-    border-radius: .8rem;
-    padding: 1.2rem 1.5rem;
-    font-size: 1.5rem;
-    margin-top: 0.6rem;
-    width: 100%;
-    transition: border-color 0.3s;
-}
-
-#campo-senha-nova .inputBox input::placeholder {
-    color: rgba(255,255,255,0.4);
-}
-
-#campo-senha-nova .inputBox input:focus {
-    outline: none;
-    border-color: #ea1d2c;
-    background: rgba(255,255,255,0.15);
-}
-</style>

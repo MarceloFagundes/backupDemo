@@ -31,6 +31,9 @@ $Link = new Link;
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap">
     <link rel="stylesheet" type="text/css" href="<?= CAMINHO_TEMAS?>/assets/css/style.css?v=1.2">
     <link rel="shortcut icon" href="<?= CAMINHO_TEMAS?>/assets/img/msFavicon.png" type="image/x-icon">
 </head>
